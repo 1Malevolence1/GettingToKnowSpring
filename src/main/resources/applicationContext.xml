@@ -11,4 +11,7 @@
     </bean>
 
 
+    <bean id="music" class="ru.alishew.springcourse.music.RockMusic">
+    </bean>
+
 </beans>
