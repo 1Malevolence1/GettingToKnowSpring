@@ -1,6 +1,8 @@
-package ru.alishew.springcourse.music;
+package ru.alishew.springcourse.music.genresmusic;
 
-public class RockMusic implements Music{
+import ru.alishew.springcourse.music.Music;
+
+public class RockMusic implements Music {
     @Override
     public void start() {
         System.out.println("Играет рок музыка");

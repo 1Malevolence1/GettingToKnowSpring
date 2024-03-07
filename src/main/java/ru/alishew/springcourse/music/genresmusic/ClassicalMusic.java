@@ -1,4 +1,6 @@
-package ru.alishew.springcourse.music;
+package ru.alishew.springcourse.music.genresmusic;
+
+import ru.alishew.springcourse.music.Music;
 
 public class ClassicalMusic implements Music {
     @Override

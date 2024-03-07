@@ -10,15 +10,21 @@
     <context:property-placeholder location="classpath:application.properties"/>
 
 
-    <bean id="musicBean" class="ru.alishew.springcourse.music.ClassicalMusic">
+    <bean id="musicRock" class="ru.alishew.springcourse.music.genresmusic.RockMusic">
+    </bean>
+
+    <bean id="musicKpop" class="ru.alishew.springcourse.music.genresmusic.KpopMusic">
     </bean>
 
 
+    <bean id="musicClassical" class="ru.alishew.springcourse.music.genresmusic.ClassicalMusic">
+    </bean>
+
+
+
     <bean id="musicPlayer"
-          class="ru.alishew.springcourse.music.Player">
-        <property name="name" value="${musicPlayer.name}" > </property>
-        <property name="value" value="${musicPlayer.value}"> </property>
-        <property name="music" ref="musicBean"> </property>
+          class="ru.alishew.springcourse.music.Player"
+            >
     </bean>
 
 </beans>
