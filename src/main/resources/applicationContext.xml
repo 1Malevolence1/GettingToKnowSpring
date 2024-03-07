@@ -6,7 +6,8 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
 
-    <bean id="run" class="com.example.startspring.Woman">
+    <bean id="testBean" class="ru.alishew.springcourse.TestBean">
+        <constructor-arg value="Danil"/>
     </bean>
 
 
