@@ -15,7 +15,7 @@ public class Computer {
         this.player = player;
 
     }
-    public void playPlayer() throws InterruptedException {
+  /*  public void playPlayer() throws InterruptedException {
         player.play();
-    }
+    }*/
 }

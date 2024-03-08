@@ -8,12 +8,15 @@ import ru.alishew.springcourse.music.genresmusic.RockMusic;
 public class Mian {
     public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        /*   Player player = context.getBean("playerMusic", Player.class);
+         Player player = context.getBean("playerMusic", Player.class);
 
-        player.play();*/
+        player.play(Genres.ROCKMUSIC);
 
-        Computer computer = context.getBean("computer", Computer.class);
-        computer.playPlayer();
+       /* Computer computer = context.getBean("computer", Computer.class);
+        computer.playPlayer();*/
+
+
+
 
         context.close();
 
