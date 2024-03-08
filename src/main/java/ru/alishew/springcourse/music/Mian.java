@@ -8,11 +8,13 @@ import ru.alishew.springcourse.music.genresmusic.RockMusic;
 public class Mian {
     public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Player player = context.getBean("musicPlayer", Player.class);
+        Player player = context.getBean("playerMusic", Player.class);
 
-        player.addMusic(context.getBean("musicRock", RockMusic.class));
-        player.addMusic(context.getBean("musicKpop", KpopMusic.class));
-        player.addMusic(context.getBean("musicClassical", ClassicalMusic.class));
+
+
+        player.addMusic(context.getBean("classicalMusic", Music.class));
+        player.addMusic(context.getBean("kpopMusic", Music.class));
+        player.addMusic(context.getBean("rockMusic", Music.class));
 
 
         player.play();

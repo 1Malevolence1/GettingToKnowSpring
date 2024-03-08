@@ -1,7 +1,11 @@
 package ru.alishew.springcourse.music.genresmusic;
 
+import org.springframework.stereotype.Component;
 import ru.alishew.springcourse.music.Music;
 
+
+// Если не указывать id, то по умолчанию id = название классу с маленькой буквы
+@Component
 public class KpopMusic implements Music {
 
 

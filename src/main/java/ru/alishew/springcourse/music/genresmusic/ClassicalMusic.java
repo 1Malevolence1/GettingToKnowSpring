@@ -1,7 +1,10 @@
 package ru.alishew.springcourse.music.genresmusic;
 
+import org.springframework.stereotype.Component;
 import ru.alishew.springcourse.music.Music;
 
+
+@Component("classicalMusic")
 public class ClassicalMusic implements Music {
     @Override
     public void start() {

@@ -1,8 +1,12 @@
 package ru.alishew.springcourse.music;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Component("playerMusic")
 public class Player {
     private List<Music> listMusic;
 
