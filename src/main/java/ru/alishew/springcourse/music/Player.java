@@ -1,6 +1,7 @@
 package ru.alishew.springcourse.music;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.alishew.springcourse.music.genresmusic.ClassicalMusic;
 import ru.alishew.springcourse.music.genresmusic.RockMusic;
@@ -14,12 +15,19 @@ import java.util.Random;
 @Component("playerMusic")
 public class Player {
     private List<Music> listMusic;
-    @Autowired
+
     private ClassicalMusic classicalMusic;
-    @Autowired
+
     private RockMusic rockMusic;
 
     public Player() {
+    }
+
+    @Autowired
+    public Player(@Qualifier("classicalMusic") ClassicalMusic classicalMusic,
+                  @Qualifier("rockMusic") RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
     // внедряется зависимость из вне (IoC)

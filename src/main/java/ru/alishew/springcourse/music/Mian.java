@@ -12,10 +12,6 @@ public class Mian {
 
         player.play(Genres.ROCKMUSIC);
 
-       /* Computer computer = context.getBean("computer", Computer.class);
-        computer.playPlayer();*/
-
-
 
 
         context.close();
