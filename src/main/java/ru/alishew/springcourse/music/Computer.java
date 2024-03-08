@@ -7,10 +7,14 @@ import org.springframework.stereotype.Component;
 public class Computer {
     private int id;
 
-    @Autowired
+
     private Player player;
+    @Autowired
+    private Computer(Player player){
+        this.id = 1;
+        this.player = player;
 
-
+    }
     public void playPlayer() throws InterruptedException {
         player.play();
     }
