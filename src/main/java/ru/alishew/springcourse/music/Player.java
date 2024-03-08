@@ -1,6 +1,8 @@
 package ru.alishew.springcourse.music;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.alishew.springcourse.music.genresmusic.ClassicalMusic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,8 @@ public class Player {
     }
 
     // внедряется зависимость из вне (IoC)
+
+    @Autowired
     public Player(List<Music> listMusic) {
         this.listMusic = listMusic;
     }
@@ -27,6 +31,7 @@ public class Player {
             music.end();
         }
     }
+
 
 
     public void addMusic(Music music) {
