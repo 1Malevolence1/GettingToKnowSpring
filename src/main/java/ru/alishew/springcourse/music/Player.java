@@ -12,37 +12,24 @@ import java.util.Objects;
 import java.util.Random;
 
 
-@Component("playerMusic")
+
 public class Player {
     private List<Music> listMusic;
 
-    private ClassicalMusic classicalMusic;
-
-    private RockMusic rockMusic;
 
     public Player() {
     }
 
-    @Autowired
-    public Player(@Qualifier("classicalMusic") ClassicalMusic classicalMusic,
-                  @Qualifier("rockMusic") RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
+    public Player(List<Music> listMusic) {
+        this.listMusic = listMusic;
     }
 
     // внедряется зависимость из вне (IoC)
 
 
 
-    public void play(Genres e) throws InterruptedException {
-
-        switch (e){
-            case CLASSICALMUSIC -> randomSong(classicalMusic);
-            case ROCKMUSIC -> randomSong(rockMusic);
-
-
-            default -> throw new IllegalStateException("Unexpected value: " + e);
-        }
+    public void play() throws InterruptedException {
+        System.out.println(randomSong(randomGenres()));
     }
 
 
@@ -55,8 +42,15 @@ public class Player {
         listMusic.add(music);
     }
 
-    private void randomSong(Music music){
-        Random random = new Random();
-        System.out.println(music.getSong().get(random.nextInt(music.getSong().size())));
+    private Music randomGenres( ){
+        return listMusic.get(random().nextInt(listMusic.size()));
+    }
+
+    private String randomSong(Music music){
+        return music.getSong().get(random().nextInt(music.getSong().size()));
+    }
+
+    private Random random(){
+        return new Random();
     }
 }

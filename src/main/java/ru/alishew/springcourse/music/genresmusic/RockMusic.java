@@ -5,7 +5,7 @@ import ru.alishew.springcourse.music.Music;
 
 import java.util.List;
 
-@Component
+
 public class RockMusic implements Music {
 
     private List<String> list = List.of("Король и шут", "Монетка", "Колдун");

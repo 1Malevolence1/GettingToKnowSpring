@@ -7,11 +7,10 @@ import java.util.List;
 
 
 // Если не указывать id, то по умолчанию id = название классу с маленькой буквы
-@Component
+
 public class KpopMusic implements Music {
 
-
-
+    private List<String> list = List.of("DLMLU", "Get lit", "Eternity");
     @Override
     public void start() {
         System.out.println("К-поп начал проигрываться ");
@@ -23,6 +22,6 @@ public class KpopMusic implements Music {
 
     @Override
     public List<String> getSong() {
-        return null;
+        return list;
     }
 }
